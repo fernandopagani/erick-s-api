@@ -1,0 +1,13 @@
+name: Rodar PHP
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: windows-latest  # ou ubuntu-latest
+
+    steps:
+      - name: Run php
+        uses: > php artisan Test
+
+     
