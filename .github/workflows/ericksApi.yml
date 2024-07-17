@@ -1,11 +1,10 @@
-
 name: CI
 
 on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: windows-latest  # ou ubuntu-latest, se preferir
+    runs-on: windows-latest  
 
     steps:
       - name: Checkout code
@@ -14,7 +13,8 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.1'  # Atualize para 8.1 ou superior
+          php-version: '8.1'  
+          extensions: mbstring, xml, fileinfo  
 
       - name: Update dependencies
         run: composer update
